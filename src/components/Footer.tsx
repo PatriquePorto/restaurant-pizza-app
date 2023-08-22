@@ -17,9 +17,7 @@ const Footer = () => {
         
         </div>
 
-        <div
-          className="mt-16 border-t border-gray-100 pt-8 sm:flex sm:items-center sm:justify-between lg:mt-24"
-        >
+        <div className="mt-16 border-t border-gray-100 pt-8 sm:flex sm:items-center sm:justify-between lg:mt-24">
           <ul className="flex flex-wrap justify-center gap-4 text-xs lg:justify-end">
             <li>
               <a href="#" className="text-gray-500 transition hover:opacity-75">
@@ -36,6 +34,12 @@ const Footer = () => {
             <li>
               <a href="#" className="text-gray-500 transition hover:opacity-75">
                 Cookies
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="text-red-500 font-bold transition hover:opacity-75">
+               © 2023 All Rights Reserved
               </a>
             </li>
           </ul>
