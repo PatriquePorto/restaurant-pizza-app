@@ -7,7 +7,7 @@ const Offer = () => {
     <div className="bg-black h-screen flex flex-col md:flex-row md:justify-between md:bg-[url('/offerBg.png')] md:h-[70vh]">
       {/* TEXT CONTAINER */}
       <div className="flex-1 flex flex-col justify-center items-center text-center gap-8 p-6">
-        <h1 className="text-white animate-bounce text-5xl font-bold xl:text-6xl">Delicious Burger & French Fry</h1>
+        <h1 className="text-white animate-bounce text-5xl font-bold xl:text-6xl mt-4">Delicious Burger & French Fry</h1>
         <p className="animate-pulse bg-gradient-to-r from-white via-gray-400 to-white bg-clip-text text-transparent xl:text-xl">
         Sale of the month, take this delicious burger and pay only $10.00 with free delivery.
         Let's go fast, limited time promotion.

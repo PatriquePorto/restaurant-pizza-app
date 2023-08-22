@@ -16,7 +16,7 @@ const Navbar = () => {
       </div>
       {/* LOGO */}
       <div className="text-xl md:font-bold flex-1 md:text-center">
-        <Link href="/">Massimo</Link>
+        <Link href="/">Pizza Massimo</Link>
       </div>
       {/* MOBILE MENU */}
       <div className="md:hidden">
