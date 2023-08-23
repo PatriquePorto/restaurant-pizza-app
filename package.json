@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.2.0",
     "@types/node": "20.4.9",
     "@types/react": "^18.2.20",
     "autoprefixer": "10.4.14",
@@ -17,6 +18,7 @@
     "lottie-react": "^2.4.0",
     "next": "13.4.13",
     "postcss": "8.4.27",
+    "prisma": "^5.2.0",
     "react": "18.2.0",
     "react-countdown": "^2.3.5",
     "react-dom": "18.2.0",

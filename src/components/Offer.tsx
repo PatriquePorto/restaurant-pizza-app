@@ -9,7 +9,7 @@ const Offer = () => {
       <div className="flex-1 flex flex-col justify-center items-center text-center gap-8 p-6">
         <h1 className="text-white animate-bounce text-5xl font-bold xl:text-6xl mt-4">Delicious Burger & French Fry</h1>
         <p className="animate-pulse bg-gradient-to-r from-white via-gray-400 to-white bg-clip-text text-transparent xl:text-xl">
-        Sale of the month, take this delicious burger and pay only $10.00 with free delivery.
+        Sale of the month, take this delicious burger and pay only <span className="text-yellow-300 text-2xl">$12.00</span> with free delivery.
         Let's go fast, limited time promotion.
         </p>
         <CountDown/>
