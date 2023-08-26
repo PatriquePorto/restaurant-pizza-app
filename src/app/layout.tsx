@@ -5,12 +5,13 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Favicon from '/public/favicon.ico';
+import AuthProvider from "@/components/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pizza Massimo Taste",
-  description: "Restaurant application in nextjs",
+  description: "Best restaurant city",
   icons: [{ rel: 'icon', url: Favicon.src }],
 };
 
@@ -22,12 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="overflow-x-hidden">
-          <Notification />
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+      <AuthProvider>
+          <div className="overflow-x-hidden">        
+              <Notification />
+              <Navbar />
+              {children}
+              <Footer />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

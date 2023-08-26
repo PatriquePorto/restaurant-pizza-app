@@ -17,11 +17,14 @@ This project was developed with the following technologies:
 
 ## 💻 Project
 
-A restaurant application page, with: menu navigation, add item to cart, etc.
-Animation with lib Lottiefiles in the project.
-Developed first with the mobile first methodology, then for desktop.
-Compatible with all mobile devices and with a beautiful and pleasant user interface.
+<p dir="auto">A Fullstack Restaurant App</p>
 
+- A restaurant application page, with: menu navigation, add item to cart, etc.
+- Animation with lib Lottiefiles in the project.
+- Developed first with the mobile first methodology, then for desktop.
+- Compatible with all mobile devices and with a beautiful and pleasant user interface.
+- Back-end with PostgreSQL, Prisma and Docker. 
+- Login auth with Google and Facebook api
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
