@@ -1,4 +1,4 @@
-<h1 align="center"> Restaurat App In NextJs </h1>
+<h1 align="center"> Fullstack Restaurat App With NextJs & Prisma </h1>
 
 </br>
 <img src="/preview.png" width="100%"></img>
