@@ -6,6 +6,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Favicon from '/public/favicon.ico';
 import AuthProvider from "@/components/AuthProvider";
+import QueryProvider from "@/components/QueryProvider";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,13 +27,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
       <AuthProvider>
+        <QueryProvider>
           <div className="overflow-x-hidden">        
               <Notification />
               <Navbar />
               {children}
               <Footer />
+              <ToastContainer position="bottom-right" theme="dark" autoClose={3000} />
           </div>
-        </AuthProvider>
+        </QueryProvider>
+       </AuthProvider>
       </body>
     </html>
   );
