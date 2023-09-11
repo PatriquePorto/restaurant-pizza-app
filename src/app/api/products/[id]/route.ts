@@ -1,26 +1,20 @@
 import { prisma } from "@/utils/connect";
 import { NextRequest, NextResponse } from "next/server";
 
-
-export const PUT = async (
+//GET SINGLE PRODUCT
+export const GET = async (
     req: NextRequest,
     { params }: { params: { id: string} }
 ) => {
     const { id } = params
 
     try {
-        const body = await req.json()
-
-        await prisma.order.update({
+    const product = await prisma.product.findUnique({
             where: {
                 id: id,
-            },
-            data: { status: body },
+            },       
         })
-        return new NextResponse(
-            JSON.stringify({ message: "Order has been updated!" }),
-            { status: 200}
-        )
+        return new NextResponse(JSON.stringify(product),{ status: 200})
     } catch (err) {
         console.log(err)
         return new NextResponse(

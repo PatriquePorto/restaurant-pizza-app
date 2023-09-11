@@ -1,30 +1,45 @@
 "use client";
+import { useCartStore } from "@/utils/store"
+import React, { useEffect, useState } from "react"
+import { ProductType } from "@/types/types"
+import { toast } from "react-toastify";
 
-import React, { useEffect, useState } from "react";
+const Price = ({ product }: { product: ProductType }) => {
+  const [total, setTotal] = useState(product.price)
+  const [quantity, setQuantity] = useState(1)
+  const [selected, setSelected] = useState(0)
 
-type Props = {
-  price: number;
-  id: number;
-  options?: { title: string; additionalPrice: number }[];
-};
-
-const Price = ({ price, id, options }: Props) => {
-  const [total, setTotal] = useState(price);
-  const [quantity, setQuantity] = useState(1);
-  const [selected, setSelected] = useState(0);
+  const {addToCart} = useCartStore()
 
   useEffect(() => {
-    setTotal(
-      quantity * (options ? price + options[selected].additionalPrice : price)
-    );
-  }, [quantity, selected, options, price]);
+    if (product.options?.length) {
+      setTotal(
+        quantity * product.price + product.options[selected].additionalPrice
+      )
+    }
+  }, [quantity, selected, product]);
+
+  const handleCart = () => {
+    addToCart({ 
+      id: product.id,
+      title: product.title,
+      img: product.img,
+      price: total,
+      ...(product.options?.length && {
+        optionTitle: product.options[selected].title,
+      }),
+      quantity: quantity,
+    })
+    toast.success("Product added to the cart")
+  }
 
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-2xl font-bold">${total.toFixed(2)}</h2>
+      <h2 className="text-2xl font-bold">${total}</h2>
       {/* OPTIONS CONTAINER */}
       <div className="flex gap-4">
-        {options?.map((option, index) => (
+        {product.options?.length &&
+          product.options?.map((option, index) => (
           <button
             key={option.title}
             className="min-w-[6rem] p-2 ring-1 ring-red-400 rounded-md"
@@ -58,7 +73,9 @@ const Price = ({ price, id, options }: Props) => {
           </div>
         </div>
         {/* CART BUTTON */}
-        <button className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-500">
+        <button className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-500" 
+          onClick={handleCart}
+        >
           Add to Cart
         </button>
       </div>

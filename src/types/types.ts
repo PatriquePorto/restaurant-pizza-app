@@ -7,7 +7,7 @@ export type MenuType = {
     color: string
 }[]
 //Function Order Type for page Products
-export type ProducType = {
+export type ProductType = {
     id: string
     title: string
     desc?: string
@@ -20,7 +20,7 @@ export type OrderType = {
     id: string
     userEmail: string
     price: number
-    product: CartItemType[]
+    products: CartItemType[]
     status: string
     createdAt: Date
     intent_id: string
@@ -33,4 +33,16 @@ export type CartItemType = {
     price: number
     optionTitle?: string
     quantity: number
+}
+
+export type CartType = {
+    products: CartItemType[];
+    totalItems: number;
+    totalPrice: number;
+  };
+  
+
+export type ActionTypes = {
+    addToCart: (item:CartItemType) => void
+    removeFromCart: (item:CartItemType) => void
 }
