@@ -25,9 +25,8 @@ const CartPage = () => {
         const res = await fetch("http://localhost:3000/api/orders", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
+            "Content-Type": "application/json",},
+            body: JSON.stringify({
             price: totalPrice,
             products,
             status: "Not Paid",

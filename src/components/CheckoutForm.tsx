@@ -1,5 +1,8 @@
+"use client"
+
 import { LinkAuthenticationElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react'
+import AddressForm from './AddressForm';
 
 const CheckoutForm = () => {
 
@@ -81,7 +84,9 @@ const CheckoutForm = () => {
       />
       <PaymentElement id="payment-element" options={{ 
         layout: "tabs", 
-        }} />
+         }} 
+        />
+         <AddressForm />
             <button disabled={isLoading || !stripe || !elements} id="submit">
                 <span id="button-text">
                 {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
