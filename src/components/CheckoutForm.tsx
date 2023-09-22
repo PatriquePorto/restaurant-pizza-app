@@ -1,15 +1,19 @@
-"use client"
+"use client";
 
-import { LinkAuthenticationElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React, { useEffect, useState } from 'react'
-import AddressForm from './AddressForm';
+import {
+  LinkAuthenticationElement,
+  PaymentElement,
+  useElements,
+  useStripe,
+} from "@stripe/react-stripe-js";
+import { useEffect, useState } from "react";
+import AddressForm from "./AddressForm";
 
 const CheckoutForm = () => {
-
-    const stripe = useStripe();
+  const stripe = useStripe();
   const elements = useElements();
 
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -78,24 +82,28 @@ const CheckoutForm = () => {
   };
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
-      <LinkAuthenticationElement
-        id="link-authentication-element"   
+    <form
+      id="payment-form"
+      onSubmit={handleSubmit}
+      className="min-h-[calc(100vh-6rem)] md:min-h-[calc(100vh-15rem)] p-4 lg:px-20 xl:px-40 flex flex-col gap-8"
+    >
+      <LinkAuthenticationElement id="link-authentication-element" />
+      <PaymentElement
+        id="payment-element"
+        options={{
+          layout: "tabs",
+        }}
       />
-      <PaymentElement id="payment-element" options={{ 
-        layout: "tabs", 
-         }} 
-        />
-         <AddressForm />
-            <button disabled={isLoading || !stripe || !elements} id="submit">
-                <span id="button-text">
-                {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
-                </span>
-            </button>
+      <AddressForm />
+      <button disabled={isLoading || !stripe || !elements} id="submit" className="bg-red-500 text-white p-4 rounded-md w-28">
+        <span id="button-text">
+          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+        </span>
+      </button>
       {/* Show any error or success messages */}
       {message && <div id="payment-message">{message}</div>}
     </form>
-  )
-}
+  );
+};
 
-export default CheckoutForm
+export default CheckoutForm;

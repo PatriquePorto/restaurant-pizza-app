@@ -24,7 +24,10 @@ This project was developed with the following technologies:
 - Developed first with the mobile first methodology, then for desktop.
 - Compatible with all mobile devices and with a beautiful and pleasant user interface.
 - Back-end with PostgreSQL, Prisma and Docker. 
-- Login auth with Google and Facebook api
+- Login auth with Google.
+- API stripe connection to process payments
+- API image upload Cloudinary connection
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -33,11 +36,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+
+1 - npx prisma migrate dev
+
+2 - npm or yarn install
+
+3 - first terminal: yarn dev or npm run dev
+
+3 - second terminal: cd src/docker && docker compose up
+
+3 - third terminal: npx prisma studio
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
