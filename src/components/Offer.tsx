@@ -12,7 +12,7 @@ const Offer = () => {
         Sale of the month, take this delicious burger and pay only <span className="text-yellow-300 text-2xl">$12.00</span> with free delivery.
         Let's go fast, limited time promotion.
         </p>
-        <CountDown/>
+        <CountDown />
         <button className="bg-red-500 text-white rounded-md py-3 px-6 hover:bg-red-700">Order Now</button>
       </div>
       {/* IMAGE CONTAINER */}

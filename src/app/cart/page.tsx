@@ -16,9 +16,10 @@ const CartPage = () => {
     useCartStore.persist.rehydrate()
   },[])
 
+  //VERIFY IF USER IS LOGGED IN AND IF NOT, REDIRECT TO LOGIN
   const handleCheckout = async () => {
     if (!session) {
-      router.push("/")
+      router.push("/login")
     }else{
       try{
 

@@ -1,8 +1,10 @@
 import { ProductType } from "@/types/types";
 import Image from "next/image";
 import React from "react";
+import ButtonAddCart from "./ButtonAddCart";
 
 const getData = async () => {
+
   const rest = await fetch('http://localhost:3000/api/products', {
     cache: 'no-store'
   }) 
@@ -21,7 +23,6 @@ const Featured = async () => {
 
   return (
 
-    
     <div className="w-screen text-red-500 overflow-x-scroll">
       
       {/* WRAPPER */}
@@ -32,7 +33,7 @@ const Featured = async () => {
        
           <div
             key={item.id}
-            className="w-screen h-[60vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-50 transition-all duration-300 md:w-[50vw] xl:w-[33vw] xl:h-[90vh]"
+            className="w-screen h-[60vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-100 transition-all duration-300 md:w-[50vw] xl:w-[33vw] xl:h-[90vh]"
           >
             {/* IMAGE CONTAINER */}
             {item.img && (
@@ -45,9 +46,7 @@ const Featured = async () => {
               <h1 className="text-xl font-bold uppercase xl:text-2xl 2xl:text-3xl">{item.title}</h1>
               <p className="p-4 2xl:p-8">{item.desc}</p>
               <span className="text-xl font-bold">${item.price}</span>
-              <button className="bg-red-500 text-white p-2 rounded-md">
-                Add to Cart
-              </button>
+              <ButtonAddCart id={item.id}/>
             </div>
           </div>
         
