@@ -1,4 +1,4 @@
-import { ProducType } from "@/types/types";
+import { ProductType } from "@/types/types";
 import Image from "next/image";
 import React from "react";
 
@@ -17,7 +17,7 @@ const getData = async () => {
 
 const Featured = async () => {
 
-   const featuredProducts:ProducType[] = await getData()
+   const featuredProducts:ProductType[] = await getData()
 
   return (
 
