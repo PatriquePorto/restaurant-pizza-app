@@ -1,6 +1,11 @@
 <h1 align="center"> Fullstack Restaurat App With NextJs & Prisma </h1>
 
 </br>
+<img src="/diagram.png" width="100%"></img>
+</br>
+
+
+</br>
 <img src="/preview.png" width="100%"></img>
 </br>
 
@@ -14,6 +19,8 @@ This project was developed with the following technologies:
 - Typescript
 - Javascript
 - Tailwind CSS
+- Prisma
+- Postgresql
 
 ## 💻 Project
 
