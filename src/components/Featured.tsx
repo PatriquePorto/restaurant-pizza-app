@@ -16,7 +16,6 @@ const getData = async () => {
   return rest.json()
 }
 
-
 const Featured = async () => {
 
    const featuredProducts:ProductType[] = await getData()
@@ -46,7 +45,7 @@ const Featured = async () => {
               <h1 className="text-xl font-bold uppercase xl:text-2xl 2xl:text-3xl">{item.title}</h1>
               <p className="p-4 2xl:p-8">{item.desc}</p>
               <span className="text-xl font-bold">${item.price}</span>
-              <ButtonAddCart id={item.id}/>
+              <ButtonAddCart id={item.id} />
             </div>
           </div>
         
