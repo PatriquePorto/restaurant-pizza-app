@@ -1,5 +1,6 @@
 {
     "version": "1.0.0",
+    "buildCommand": "next build",
     "builds": [
         {
             "src": "src/app/page.tsx",
