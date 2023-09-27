@@ -4,6 +4,7 @@ import Slider from '@/components/Slider'
 import AnimatedPizza from '@/components/AnimatedPizza'
 import AnimatedDelivery from '@/components/AnimatedDelivery'
 
+
 export default function Home() {
   return (
     <main>

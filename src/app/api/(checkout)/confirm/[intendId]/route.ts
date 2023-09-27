@@ -1,9 +1,12 @@
-import { prisma } from "@/utils/connect"
-import { NextResponse } from "next/server"
+import { PrismaClient } from "@prisma/client";
+import { NextApiResponse } from "next";
 
-export const PUT = async ({ params }: { params: { intentId: string } }) => {
-  const { intentId } = params;
+const prisma = new PrismaClient();
 
+export const PUT = async (
+  intentId: string,
+  response: NextApiResponse
+) => {
   try {
     await prisma.order.update({
       where: {
@@ -11,18 +14,12 @@ export const PUT = async ({ params }: { params: { intentId: string } }) => {
       },
       data: { status: "Being prepared!" },
     });
-    return new NextResponse(
-      JSON.stringify({ message: "Order has been updated" }),
-      { status: 200 }
-    );
+    return response.status(200).json({ message: "Order has been updated" });
   } catch (err) {
     console.log(err);
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }),
-      { status: 500 }
-    )
+    return response.status(500).json({ message: "Something went wrong!" });
   }
-}
+};
 /* import { prisma } from "@/utils/connect"
 import { NextResponse } from "next/server"
 
