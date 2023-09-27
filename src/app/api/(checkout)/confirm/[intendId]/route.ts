@@ -1,4 +1,30 @@
-import { prisma } from "@/utils/connect"
+import { PrismaClient } from "@prisma/client";
+import { NextApiRequest, NextApiResponse } from "next";
+
+const prisma = new PrismaClient();
+
+export default async function handler(
+  request: NextApiRequest,
+  response: NextApiResponse
+) {
+  const { intentId } = request.query;
+
+  try {
+    await prisma.order.update({
+      where: {
+        intent_id: intentId as string,
+      },
+      data: { status: "Being prepared!" },
+    });
+
+    return response.status(200).json({ message: "Order has been updated" });
+  } catch (err) {
+    console.log(err);
+
+    return response.status(500).json({ message: "Something went wrong!" });
+  }
+}
+/* import { prisma } from "@/utils/connect"
 import { NextResponse } from "next/server"
 
 export const PUT = async ({ params }: { params: { intentId: string } }) => {
@@ -22,4 +48,4 @@ export const PUT = async ({ params }: { params: { intentId: string } }) => {
       { status: 500 }
     )
   }
-}
+} */
