@@ -1,22 +1,26 @@
 import { PrismaClient } from "@prisma/client";
-import { NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 
 const prisma = new PrismaClient();
 
 export const PUT = async (
-  intentId: string,
+  request: NextApiRequest,
   response: NextApiResponse
 ) => {
+  const { intentId } = request.query;
+
   try {
     await prisma.order.update({
       where: {
-        intent_id: intentId,
+        intent_id: intentId as string,
       },
       data: { status: "Being prepared!" },
     });
+
     return response.status(200).json({ message: "Order has been updated" });
   } catch (err) {
     console.log(err);
+
     return response.status(500).json({ message: "Something went wrong!" });
   }
 };
