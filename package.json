@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "vercel-build": "npx prisma migrate deploy",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,6 +17,7 @@
     "@tanstack/react-query": "^4.35.0",
     "@types/node": "20.4.9",
     "@types/react": "^18.2.20",
+    "@vercel/postgres": "^0.5.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
