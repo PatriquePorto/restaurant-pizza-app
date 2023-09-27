@@ -20,6 +20,7 @@ This project was developed with the following technologies:
 - Javascript
 - Tailwind CSS
 - Prisma
+- Docker
 - Postgresql
 
 ## 💻 Project
