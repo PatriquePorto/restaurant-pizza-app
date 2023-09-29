@@ -1,4 +1,4 @@
-import { prisma } from "@/utils/connect";
+import { prisma } from "../../../../../utils/connect";
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
