@@ -1,4 +1,5 @@
-import { MenuType } from "@/types/types";
+//import { MenuType } from "@/types/types";
+import { MenuType } from "../../types/types";
 import Link from "next/link";
 import React from "react";
 
