@@ -3,13 +3,13 @@
     "builds": [
         {
             "src": "vercel.json",
-            "use": "@vercel/node"
+            "use": "@vercel/static"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/"
+            "dest": "vercel.json"
         }
     ]
 }
